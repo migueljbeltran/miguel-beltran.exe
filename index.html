@@ -24,7 +24,7 @@
       property="og:description"
       content="CS student at UC Davis. Full Stack Developer building with React, Next.js, Python, and TypeScript."
     />
-    <meta property="og:image" content="Assets/images/og-image.png" />
+    <meta property="og:image" content="Assets/images/thumbnail.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -34,7 +34,7 @@
       property="twitter:description"
       content="CS student at UC Davis. Full Stack Developer building with React, Next.js, Python, and TypeScript."
     />
-    <meta property="twitter:image" content="Assets/images/og-image.png" />
+    <meta property="twitter:image" content="Assets/images/thumbnail.png" />
 
     <title>miguel-beltran.exe</title>
 
@@ -1584,44 +1584,78 @@
             </div>
           </div>
 
-          <form class="space-y-6 bg-gray-50 p-6 border-2 border-black">
+          <form
+            id="contact-form"
+            class="space-y-6 bg-gray-50 p-6 border-2 border-black"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="a676efe5-be6f-42b7-9d7c-b5bef7c637d8"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="New message from miguel-beltran.exe"
+            />
+            <input type="hidden" name="from_name" value="Portfolio Contact" />
             <div class="flex flex-col">
-              <label class="font-mono font-bold mb-1 uppercase text-xs"
+              <label
+                for="name"
+                class="font-mono font-bold mb-1 uppercase text-xs"
                 >Identity</label
               >
               <input
+                id="name"
+                name="name"
                 type="text"
+                required
                 placeholder="NAME / COMPANY"
                 class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover"
               />
             </div>
             <div class="flex flex-col">
-              <label class="font-mono font-bold mb-1 uppercase text-xs"
+              <label
+                for="email"
+                class="font-mono font-bold mb-1 uppercase text-xs"
                 >Coordinates</label
               >
               <input
+                id="email"
+                name="email"
                 type="email"
+                required
                 placeholder="EMAIL ADDRESS"
                 class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover"
               />
             </div>
             <div class="flex flex-col">
-              <label class="font-mono font-bold mb-1 uppercase text-xs"
+              <label
+                for="message"
+                class="font-mono font-bold mb-1 uppercase text-xs"
                 >Transmission</label
               >
               <textarea
+                id="message"
+                name="message"
                 rows="4"
+                required
                 placeholder="PROJECT DETAILS..."
                 class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"
               ></textarea>
             </div>
             <button
+              id="submit-btn"
               type="submit"
               class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
             >
               TRANSMIT DATA
             </button>
           </form>
+          <div
+            id="form-status"
+            class="hidden mt-6 p-6 border-4 border-black font-mono text-center shadow-hard"
+          ></div>
         </div>
       </div>
     </section>
@@ -1832,6 +1866,46 @@
         let scrolled = (winScroll / height) * 100;
         document.getElementById("progressBar").style.width = scrolled + "%";
       };
+
+      // Contact Form Handler
+      const contactForm = document.getElementById("contact-form");
+      const formStatus = document.getElementById("form-status");
+      const submitBtn = document.getElementById("submit-btn");
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = "TRANSMITTING...";
+
+        try {
+          const formData = new FormData(contactForm);
+          const response = await fetch(
+            "https://api.web3forms.com/submit",
+            { method: "POST", body: formData },
+          );
+          const result = await response.json();
+
+          if (result.success) {
+            formStatus.className =
+              "mt-6 p-6 border-4 border-black font-mono text-center shadow-hard bg-neo-green text-black";
+            formStatus.innerHTML =
+              '<span class="text-2xl font-black block mb-2">TRANSMISSION SUCCESSFUL</span>' +
+              '<span class="text-sm">>> Message received. I\'ll get back to you soon.</span>';
+            contactForm.reset();
+          } else {
+            throw new Error(result.message || "Submission failed");
+          }
+        } catch (error) {
+          formStatus.className =
+            "mt-6 p-6 border-4 border-black font-mono text-center shadow-hard bg-neo-red text-white";
+          formStatus.innerHTML =
+            '<span class="text-2xl font-black block mb-2">TRANSMISSION FAILED</span>' +
+            '<span class="text-sm">>> Error: ' + error.message + ". Try again.</span>";
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "TRANSMIT DATA";
+      });
     </script>
   </body>
 </html>

@@ -1,25 +1,18 @@
-# MIGUEL.exe // PORTFOLIO
+# miguel-beltran.exe
 
 ```
 >> SYSTEM_STATUS: ONLINE
 >> THEME: NEO_BRUTALISM
->> VERSION: 2.0.0
+>> BUILT_BY: MIGUEL BELTRAN
 ```
 
-> **WARNING**: This is NOT a standard portfolio. It is a raw, unfiltered expression of code. No cookies. No trackers. Just pure HTML, CSS, and JS anarchy.
+> **WARNING**: This is NOT a standard portfolio. No cookies. No trackers. Just pure HTML, CSS, and JS.
 
 ---
 
-## /// MANIFESTO
+## /// ABOUT
 
-**Design is dying.** The web has become a sea of identical, sanitized templates. We are here to break the grid.
-This portfolio embraces **Neo-Brutalism**:
-- High Contrast
-- Raw Typography
-- Asymmetrical Layouts
-- "Ugly" on Purpose
-
-It's not about being pretty. It's about being **BOLD**.
+Personal portfolio for **Miguel Beltran** — CS student at UC Davis and Full Stack Developer. Built with a Neo-Brutalist design philosophy: high contrast, raw typography, asymmetrical layouts, bold on purpose.
 
 ---
 
@@ -36,56 +29,48 @@ It's not about being pretty. It's about being **BOLD**.
 
 ---
 
-## /// FEATURES_LOG
+## /// FEATURES
 
-### 01. CUSTOM_CURSOR
-> A custom-built cursor that reacts to interactive elements.
-> - **Normal State**: Small crosshair/dot.
-> - **Hover State**: Expands to a Neo-Yellow block with black borders.
+- **Custom Cursor** — Reactive crosshair that transforms on hover
+- **Glitch Effects** — CSS-only glitch animations with `mix-blend-mode: difference`
+- **Marquee Scroll** — Infinite scrolling text banners in both directions
+- **Scroll Reveal** — Elements animate in via `IntersectionObserver`
+- **Live GitHub Stats** — Real-time repos, followers, commits, and contribution graph
+- **Journal Section** — Personal hobby/interest log displayed as a scrolling marquee
 
-### 02. GLITCH_EFFECTS
-> CSS-only glitch animations on hover states.
-> - `mix-blend-mode: difference` for high contrast.
-> - Random translation keyframes for that "broken" feel.
+---
 
-### 03. MARQUEE_SCROLL
-> Infinite scrolling text banners.
-> - Pure CSS animation.
-> - **Direction**: Left-to-Right & Right-to-Left.
+## /// PROJECTS
 
-### 04. REVEAL_ANIMATION
-> Elements reveal themselves as you scroll.
-> - `IntersectionObserver` API.
-> - Smooth translate-Y transitions.
-
-### 05. CODING_STATS_INTEGRATION
-> Real-time data visualization of development activity.
-> - **Dual-Profile Interface**: Side-by-side GitHub and LeetCode stats.
-> - **Live GitHub API**: Dynamic fetching of Repos, Followers, and Commits.
-> - **LeetCard Integration**: Real-time LeetCode problem-solving heatmap.
-> - **Parallel Layout**: Perfectly balanced columns with mirrored headers and activity matrices.
+| PROJECT | STACK |
+| :--- | :--- |
+| **8-Bit CPU** | Logisim, Digital Logic |
+| **Deadlock Tracker** | Next.js, TypeScript, Prisma, Tailwind |
+| **Questify** | Next.js, TypeScript, Supabase, PostgreSQL |
+| **Kitch** | Java, Swing, MVC |
 
 ---
 
 ## /// FILE_STRUCTURE
 
-```bash
+```
 .
 ├── Assets/
-│   ├── images/          # [DIR] Project thumbnails & Avatar
-│   └── Resume/          # [DIR] CV PDF file
-├── index.html           # [FILE] Main Entry Point
-└── README.md            # [FILE] You are here
+│   ├── images/          # Avatar, project screenshots, favicon
+│   └── Resume/          # Resume PDF
+├── index.html           # Main entry point
+└── README.md            # You are here
 ```
 
-## /// CONTACT_COORDINATES
+---
 
-**TRANSMISSION OPEN:**
-- **MAIL**: `migueljoaquinbeltran@gmail.com`
-- **GITHUB**: `migueljbeltran`
-- **LOCATION**: `Remote / Earth`
+## /// CONTACT
 
-> "I build digital products that refuse to be boring."
+- **EMAIL**: `migueljoaquinbeltran@gmail.com`
+- **GITHUB**: [migueljbeltran](https://github.com/migueljbeltran)
+- **LINKEDIN**: [miguel-j-beltran](https://www.linkedin.com/in/miguel-j-beltran)
+- **LOCATION**: Davis, CA
 
 ---
-**© 2026 MIGUEL.exe // SYSTEM_END**
+
+**© 2026 miguel-beltran.exe // SYSTEM_END**
