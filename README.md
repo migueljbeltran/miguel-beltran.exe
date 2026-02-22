@@ -59,8 +59,15 @@ Personal portfolio for **Miguel Beltran** — CS student at UC Davis and Full St
 │   ├── images/          # Avatar, project screenshots, favicon
 │   └── Resume/          # Resume PDF
 ├── index.html           # Main entry point
+├── LICENSE              # MIT License
 └── README.md            # You are here
 ```
+
+---
+
+## /// LICENSE
+
+This project is licensed under the **MIT License** — see the [`LICENSE`](LICENSE) file for details.
 
 ---
 
@@ -73,4 +80,4 @@ Personal portfolio for **Miguel Beltran** — CS student at UC Davis and Full St
 
 ---
 
-**© 2026 miguel-beltran.exe // SYSTEM_END**
+**© 2026 miguel-beltran.exe // MIT Licensed // SYSTEM_END**
